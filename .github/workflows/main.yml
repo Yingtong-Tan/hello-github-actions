@@ -5,9 +5,8 @@ jobs:
     name: Hello world action
     runs-on: windows-latest
     steps:
-      - name: Print a hello
-      - uses: actions/checkout@v1
-      - uses: ./action-a
+      - name: hello checkout
+        uses: actions/checkout@v1
         with:
           MY_NAME: "Yingtong"
   my_second_job:
@@ -15,8 +14,7 @@ jobs:
     runs-on: windows-latest
     needs: my_first_job
     steps:
-      - name: Print a bye-bye
-      - uses: actions/checkout@v1
-      - uses: ./action-a
+      - name: bye-bye checkout
+        uses: actions/checkout@v1
         with:
           MY_NAME: "Yingtong"
