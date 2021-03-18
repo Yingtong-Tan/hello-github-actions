@@ -7,8 +7,10 @@ jobs:
     steps:
       - name: hello checkout
         uses: actions/checkout@v1
-        with:
-          MY_NAME: "Yingtong"
+      - name: print hello
+        env:
+          MY_NAME: Yingtong
+        run: echo Hello $MY_NAME
   my_second_job:
     name: Bye-bye world action
     runs-on: windows-latest
@@ -16,5 +18,5 @@ jobs:
     steps:
       - name: bye-bye checkout
         uses: actions/checkout@v1
-        with:
-          MY_NAME: "Yingtong"
+      - name: say bye-bye
+        run: echo "Bye-bye~~~"
