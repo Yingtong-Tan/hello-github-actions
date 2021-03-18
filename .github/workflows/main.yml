@@ -5,18 +5,20 @@ jobs:
     name: Hello world action
     runs-on: windows-latest
     steps:
-      - name: hello checkout
+      - name: checkout
         uses: actions/checkout@v1
       - name: print hello
         env:
           MY_NAME: Yingtong
-        run: echo Hello $MY_NAME
+        run: |
+          echo Hello $MY_NAME
   my_second_job:
     name: Bye-bye world action
     runs-on: windows-latest
     needs: my_first_job
     steps:
-      - name: bye-bye checkout
-        uses: actions/checkout@v1
       - name: say bye-bye
-        run: echo "Bye-bye~~~"
+        env: 
+          MY_NAME: Yingtong
+        run: |
+          echo Bye-bye $MY_NAME
